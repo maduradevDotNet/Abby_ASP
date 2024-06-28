@@ -31,6 +31,7 @@ namespace AbbyWeb.Pages.Categories
             if (ModelState.IsValid) {
                 await _db.categories.AddAsync(Category);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category Created SuccessFully";
                 return RedirectToPage("Index");
             }
             else
